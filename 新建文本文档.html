@@ -1,0 +1,688 @@
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>审查信息_公开</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="a67a457a-c193-476e-b777-f559ea6c25cb" class="page sans"><header><h1 class="page-title">审查信息_公开</h1><p class="page-description"></p></header><div class="page-body"><nav id="79663871-ba32-4709-b724-edec91c477a8" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#0f28407f-980e-460a-924d-7e5823a465ad">对比文件(CN205823928U)公开了以下内容：</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7eca486d-224d-4bc0-a3c8-80aa1cab7130">本发明，也称为本申请</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#9835f911-c282-4127-b63c-f9f6fdd274d9">本发明的说明书附图</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#805a3b6c-f104-433a-a877-a7eac2742058">审查意见的内容为：</a></div></nav><h2 id="0f28407f-980e-460a-924d-7e5823a465ad" class="">对比文件(CN205823928U)公开了以下内容：</h2><p id="d189458d-a5bf-427f-975b-ca48d7725d4c" class="">‘’’</p><p id="4a8102aa-6fb8-40bc-9cfa-804d95f5ea16" class="">一种加强型四列圆柱滚子轴承，包括轴承内圈2、套接在轴承内圈2上 的两个轴承保持架3以及套接两个轴承保持架3的轴承外圈1，两个轴承保持架3上分别设有 第一滚子4和第二滚子5。所述轴承外圈1上设有若干润滑油注入孔6，轴承外圈1的内壁与第 一滚子4、第二滚子5的贴合处设有储油通道7，润滑油注入孔6贯穿轴承外圈1与储油通道7 连通。在日常使用中，可以通过润滑油注入孔6注入润滑油，润滑油进入储油通道7，在滚子 转动的过程中，轴承外圈1内壁表面、轴承保持架3表面、滚子表面和轴承内圈2外壁表面均 分布有润滑油且均与润滑油充分接触，保证了滚子和轴承外圈1内壁之间、滚子和轴承内圈 2外壁之间润滑油的含量，大大减小摩擦力，降低了轴承高速转动时的摩擦程度，改善并保 持轴承的润滑效果，实现轴承的高速运转，延长了轴承的使用寿命。</p><p id="d2f19ad8-3b08-44b5-930c-9a42a2250eff" class="">所述轴承外圈1的内表面设有第一凹槽8，第一凹槽8内设有密封环10，所述轴承内 圈的外表面上设有第二凹槽9，第一凹槽8和第二凹槽9中卡接有密封盖12，密封盖12位于第 二凹槽9内的一端设有密封片11，密封片11的端部抵接在第二凹槽9内。通过密封环10与密 封片11的共同配合，有效保障了轴承的密封性。</p><p id="f61c8d4e-81d2-459f-bf38-a1a585eca9c7" class="">‘’’</p><hr id="13ed4062-9307-4a30-b2c0-d56407a7f79c"/><h2 id="7eca486d-224d-4bc0-a3c8-80aa1cab7130" class="">本发明，也称为本申请</h2><p id="f1ba9588-cbf3-4c7c-aa41-f1783f3ea31d" class="">“本发明”包括两个部分，第一个部分是权利要求书，其包含有权利要求1~权利要求2，第二个部分是说明书，该说明书主要记载了“权利要求1~权利要求2”对应的具体实施方案和相应的技术效果以及它们要解决的技术问题。</p><p id="56899bea-362b-4ec6-96bf-187929069c68" class="">说明书主要是为了帮助你理解本发明的“权利要求1~权利要求2”中的各个技术特征所具有的技术效果和实际解决的技术问题。值得注意的是，“本发明”在审查意见中也被称为”本申请“。</p><ol type="1" id="3be2fda4-e2dc-4320-960e-7765f5b02310" class="numbered-list" start="1"><li><strong></strong>一种高稳定性易于清洗的四列圆柱滚子轴承，包括外环组件（1）、内环（3）和保持架组件（7），其特征在于：所述外环组件（1）内部安装有保持架组件（7），所述外环组件（1）与所述保持架组件（7）安装间隙形成护盖槽（8），所述保持架组件（7）内部安装有内环（3）；
+所述外环组件（1）包括外环A（101）和外环B（102），所述外环A（101）右侧上下两端固定安装有外环连接块（10），所述外环B（102）左侧上下两端内部开设有外环连接孔（11），且所述外环连接块（10）安装在所述外环连接孔（11）内部，所述外环A（101）和外环B（102）内部均安装有保持架组件（7）；
+所述保持架组件（7）包括保持架A（701）和保持架B（702），所述保持架A（701）和所述保持架B（702）内部两侧均开设有多个圆柱滚子槽（6），所述圆柱滚子槽（6）内部安装有圆柱滚子（5），所述保持架A（701）右侧固定安装有保持架连接环（704）；
+所述内环（3）内部安装有支撑组件（2），所述支撑组件（2）包括支撑筒（201）、护盖A（205）和护盖B（207），所述支撑筒（201）一端固定安装有护盖A（205），所述支撑筒（201）另一端外侧开设有螺纹（206），所述螺纹（206）外侧螺纹连接有护盖B（207）；
+所述护盖A（205）和所述护盖B（207）内侧均安装有密封圈（204）；
+所述密封圈（204）外部两侧固定安装有限位杆（203），所述外环A（101）上下两端内部均开设有限位槽（9），且所述限位杆（203）安装在所述限位槽（9）内部；
+所述保持架B（702）右侧内部开设有护盖槽（8），且所述护盖A（205）和所述护盖B（207）分别安装在所述保持架A（701）和保持架B（702）内部的护盖槽（8）内部；
+所述圆柱滚子槽（6）之间间隙形成有通油槽（12）；
+所述护盖A（205）和所述护盖B（207）内侧均贯穿开设有注油孔（202）；
+所述圆柱滚子槽（6）外侧贯穿开设有注油环槽（4）。</li></ol><ol type="1" id="f8734a12-b81d-404d-b013-23be0fe428d4" class="numbered-list" start="2"><li><strong></strong>根据权利要求1所述的一种高稳定性易于清洗的四列圆柱滚子轴承，其特征在于：所述保持架B（702）左侧内部开设有保持架连接槽（703），且所述保持架连接环（704）安装在所述保持架连接槽（703）内部。</li></ol><p id="f8492734-0aae-47b1-93b4-9d258ca347f5" class="">
+</p><p id="e598916c-4419-46b7-b8d2-92242fea2e34" class=""><strong>技术领域</strong></p><p id="f42d3418-ac39-4fae-a40d-c8fc8ae85c73" class=""><strong>[0001] </strong>本发明涉及四列圆柱滚子轴承加工技术领域，具体为一种高稳定性易于清洗的四列圆柱滚子轴承及其加工方法。</p><p id="94c16486-1ebc-4e58-ac97-fadfd77ca2dd" class=""><strong>背景技术</strong></p><p id="79b9726d-8520-4f02-bf11-b104b0316fda" class=""><strong>[0002] </strong>传统应用于钢铁行业用于轧机轧辊上的轴承为原树枝型保持架结构的四列圆柱滚子轴承，承受径向载荷。</p><p id="8ecb4bb5-0c5e-43f7-8661-91f1fcc284a2" class=""><strong>[0003] </strong>但是现有的四列圆柱滚子轴承不便于润滑，而轴承运转当中需要消耗一定量的润滑油，因此定期润滑是我们正常使用轴承时的一个关键的步骤，如果轴承长期使用，轴承内的润滑油会磨损殆尽，进而导致滚子磨损，同时轴承在高强度的传输使用中，轴承所受到的轴向、径向荷载会增大，进而会致使轴承内部的滚子无法达到载荷条件，从而导致滚子的偏移和异常磨损，降低了轴承的使用寿命，并且现有的四列圆柱滚子轴承内部两侧保持架转动阻力不一致时，内部滚子容易断裂，同时保持架盖容易出现松动或者倾斜，导致滚子转动摩擦阻力加大，影响使用。</p><p id="aad021cb-860c-4488-b3af-683c9b169aab" class=""><strong>[0004] </strong>专利号CN201922169566.8提出一种带雾化凝缩的四列圆柱滚子轴承；提出的一种带雾化凝缩的四列圆柱滚子轴承，四列圆柱滚子轴承具有两个内圈；对应每个所述的内圈具有与其对应设置的两个外圈；每两个外圈为一组，两组所述的外圈之间设置有中挡圈；其特征在于：每组两个所述的外圈之间、所述的中挡圈上均设置有用以将润滑油的油气分离、将润滑油凝结成油滴的雾化凝缩器；所述的雾化凝缩器对应外圈或中挡圈上的进油孔设置。本实用新型既满足了润滑的需要，又克服了油雾润滑方式直接排空的缺陷，减少了环境污染。</p><p id="825f5d34-7c08-4e23-b1ee-bd4050dd1334" class=""><strong>[0005] </strong>该装置在使用时存在以下几个缺点：1、该轴承在润滑时润滑效果不好，不能对每个滚子进行润滑，导致使用寿命降低，所以还需要进行改进；2、该轴承在使用时对保持架以及滚子没有保护，导致保持架和滚子容易脱落或者偏移，导致滚子转动阻力增大，所以还需要进行改进。</p><p id="f62ba82f-b128-4402-b6d6-8daaa3402646" class=""><strong>发明内容</strong></p><p id="b1465140-872f-4ae2-a0fc-493db87222c7" class=""><strong>[0006] </strong>本发明的目的在于提供一种高稳定性易于清洗的四列圆柱滚子轴承及其加工方法，以解决上述背景技术中提出的现有的四列圆柱滚子轴承在使用时不便于润滑，导致轴承所受到的轴向、径向荷载会增大，进而会致使轴承内部的滚子无法达到载荷条件，从而导致滚子的偏移和异常磨损，使用寿命变低的问题以及对保持架以及滚子没有保护，导致滚子和保持架容易出现偏离，导致滚子转动阻力增大的问题。</p><p id="a543af64-e29c-4919-b7e3-e986021bdae8" class=""><strong>[0017] </strong>与现有技术相比，本发明的有益效果是：</p><p id="3e9d7835-1b90-41e1-88a8-012a9b792648" class="">1.本发明通过安装有外环组件、保持架组件和注油环槽，通过在保持架组件内部的圆柱滚子槽外侧开设有注油环槽，在后续对保持架组件以及内部的圆柱滚子进行润滑时，润滑油可以通过注油环槽向每个圆柱滚子槽内部流通，同时从单侧润滑时，润滑油可通过通油槽向另一侧流通，整体润滑效果好，方便使用的同时提高了轴承整体的使用寿命。</p><p id="04468bb7-e882-4302-a40c-c19e71f9a8e8" class=""><strong>[0018] </strong>2.本发明通过安装有支撑组件和外环组件，支撑组件内部的支撑筒首先对内环进行保护，减少内环磨损，同时支撑组件内部两侧的护盖A和护盖B同时对外环组件两侧进行保护，防止其内部的保持架组件和圆柱滚子进行保护和限位，同时保持架A右侧的保持架连接环在安装时对保持架B进行支撑和限位，有效的减少了圆柱滚子和保持架组件的偏移，导致滚子转动阻力增大的问题，提高了使用效果。</p><p id="fde06681-c706-4b03-8f38-d288fa5e3f43" class=""><strong>具体实施方式</strong></p><p id="b5a714ec-f56e-44f2-83a5-bc0542954947" class=""><strong>[0022]</strong>本发明提供了一种高稳定性易于清洗的四列圆柱滚子轴承，包括外环组件1、内环3和保持架组件7，外环组件1内部安装有保持架组件7，外环组件1与保持架组件7安装间隙形成护盖槽8，保持架组件7内部安装有内环3；</p><p id="f17cccab-c385-40b2-ae22-d2b81322de22" class="">外环组件1包括外环A101和外环B102，外环A101右侧上下两端固定安装有外环连接块10，外环B102左侧上下两端内部开设有外环连接孔11，且外环连接块10安装在外环连接孔11内部，外环A101和外环B102内部均安装有保持架组件7；</p><p id="4a2c3be4-b73e-4c20-b2b5-8eb8bdb2c1c0" class="">保持架组件7包括保持架A701和保持架B702，保持架A701和保持架B702内部两侧均开设有多个圆柱滚子槽6，圆柱滚子槽6内部安装有圆柱滚子5，圆柱滚子槽6外侧贯穿开设有注油环槽4，保持架A701右侧固定安装有保持架连接环704，通过将保持架分为保持架A701和保持架B702进行分体连接，保持架A701对保持架B702进行阻隔限位，有效防止其出现偏移，减少了圆柱滚子5转动阻力增大的情况，同时保持架A701和保持架B702内部的注油环槽4可以对每个圆柱滚子槽6内部进行润滑，润滑效率更高效果更好，进而提高了轴承的使用寿命。</p><p id="35c8f8bf-78bb-433c-ae09-87e7ab0f20e6" class=""><strong>[0023] </strong>进一步的保持架B702左侧内部开设有保持架连接槽703，且保持架连接环704安装在保持架连接槽703内部，通过保持架连接槽703，将分体式的保持架连接环704与保持架B702进行连接，后续便于拆卸，提高了维护效率。</p><p id="a7ac069f-33ae-4d87-847d-8b4b33319c8b" class=""><strong>[0024] </strong>进一步的内环3内部安装有支撑组件2，支撑组件2包括支撑筒201、护盖A205和护盖B207，支撑筒201一端固定安装有护盖A205，支撑筒201另一端外侧开设有螺纹206，螺纹206外侧螺纹连接有护盖B207，支撑组件2可对内环3以及外环组件1两侧进行支撑和保护，提高了轴承整体的稳定性。</p><p id="6d25327f-293f-4541-869f-c77efe71a584" class=""><strong>[0025] </strong>进一步的护盖A205和护盖B207内侧均安装有密封圈204，密封圈204提高了轴承整体的密封性，可对保持架A701和保持架B702内部进行保护，防止保持架组件7内部出现灰尘，提高了使用效果。</p><p id="2d2fbaa4-66d0-4eb7-b170-d2248b6cf8bb" class=""><strong>[0026] </strong>进一步的密封圈204外部两侧固定安装有限位杆203，外环A101上下两端内部均开设有限位槽9，且限位杆203安装在限位槽9内部，限位杆203配合限位槽9使用，方便对保护盖A205进行定位，提高了安装的效率。</p><p id="19159c1e-6dfa-4412-8a32-0851eca2a605" class=""><strong>[0027] </strong>进一步的保持架B702右侧内部开设有护盖槽8，且护盖A205和护盖B207分别安装在保持架A701和保持架B702内部的护盖槽8内部。</p><p id="e9a7af91-ae27-4165-a49d-e30fea91881a" class=""><strong>[0028] </strong>进一步的圆柱滚子槽6之间间隙形成有通油槽12，通油槽12可在对一侧圆柱滚子槽6进行润滑后，渗透另一侧圆柱滚子槽6，提高了润滑效果。</p><p id="d29bd953-8b99-4c5b-9b5b-f425117290a0" class=""><strong>[0029] </strong>进一步的护盖A205和护盖B207内侧均贯穿开设有注油孔202，注油孔202方便在不拆卸的情况下对内部保持架组件7进行润滑，提高了使用效率。</p><p id="2a5775e6-ecdf-4498-a37a-9c385d276fad" class=""><strong>[0030] </strong>进一步的圆柱滚子槽6外侧贯穿开设有注油环槽4，注油环槽4使得润滑油液流通至每个圆柱滚子槽6内部，提高了润滑效果。</p><p id="baba67d8-42e9-4961-b0be-3fbaa9f904bd" class=""><strong>[0031] </strong>基于上述一种高稳定性易于清洗的四列圆柱滚子轴承的使用方法，包括以下步骤：</p><p id="54118f1d-bcd9-4b91-b9d4-dbc9e5301d05" class="">步骤A、首先，通过使用冲压装置将保持架A701和保持架B702分别冲压进入外环A101和外环B102内部进行过盈连接，同时形成护盖槽8，随后将圆柱滚子5分别安装至圆柱滚子槽6内部；</p><p id="2e5e68bd-9cf3-416b-b944-4589c5f52398" class="">步骤B、而后，将外环A101和外环B102进行连接，将外环A101右侧的外环连接块10插入外环B102左侧内部的外环连接孔11内部，同时保持架A701右侧的保持架连接环704插入到保持架B702左侧内内部的保持架连接槽703中，实现外环组件1和保持架组件7组装；</p><p id="f90c660d-70f0-497e-adb1-10b4a19487b8" class="">步骤C、再次，将内环3通过冲压装置与保持架组件7内侧进行过盈连接，随后通过冲压装置将支撑组件2内部的支撑筒201与内环3进行过盈连接，同时支撑组件2一端固定的护盖A205两侧的限位杆203插入外环A101两侧的限位槽9内部，护盖A205上方的密封圈204同时插入到护盖槽8内部，对外环A101一侧进行密封；</p><p id="ab79b39a-6149-435c-bae7-46878c9f763a" class="">步骤D、而后，将护盖B207与支撑筒2外侧的螺纹206进行连接，同时护盖B207内侧的密封圈204同时插入到外环B102内部护盖槽8中，对外环B102一侧进行密封，整体安装完成。</p><p id="a19d8aae-f453-4aa7-9650-d95663fe9bd6" class=""><strong>[0032] </strong>本发明的一种高稳定性易于清洗的四列圆柱滚子轴承及其加工方法，具有以下优点：</p><p id="22f8163a-2a1e-4665-a33e-6012356fd796" class="">1.本发明通过安装有外环组件、保持架组件和注油环槽，通过在保持架组件内部的圆柱滚子槽外侧开设有注油环槽，在后续对保持架组件以及内部的圆柱滚子进行润滑时，润滑油可以通过注油环槽向每个圆柱滚子槽内部流通，同时从单侧润滑时，润滑油可通过通油槽向另一侧流通，整体润滑效果好，方便使用的同时提高了轴承整体的使用寿命。</p><p id="0b3510b5-4b5b-4ba9-b500-3b9467ad59d2" class=""><strong>[0033] </strong>2.本发明通过安装有支撑组件和外环组件，支撑组件内部的支撑筒首先对内环进行保护，减少内环磨损，同时支撑组件内部两侧的护盖A和护盖B同时对外环组件两侧进行保护，防止其内部的保持架组件和圆柱滚子进行保护和限位，同时保持架A右侧的保持架连接环在安装时对保持架B进行支撑和限位，有效的减少了圆柱滚子和保持架组件的偏移，导致滚子转动阻力增大的问题，提高了使用效果。</p><h3 id="9835f911-c282-4127-b63c-f9f6fdd274d9" class="">本发明的说明书附图</h3><figure id="7ab9bb05-3a9e-4bbe-ba2f-aac86fff26c1" class="image"><a href="%E5%AE%A1%E6%9F%A5%E4%BF%A1%E6%81%AF_%E5%85%AC%E5%BC%80%20a67a457ac193476eb777f559ea6c25cb/Untitled.png"><img style="width:522px" src="%E5%AE%A1%E6%9F%A5%E4%BF%A1%E6%81%AF_%E5%85%AC%E5%BC%80%20a67a457ac193476eb777f559ea6c25cb/Untitled.png"/></a></figure><h2 id="805a3b6c-f104-433a-a877-a7eac2742058" class="">审查意见的内容为：</h2><p id="b1902fc9-f81e-4824-a8b9-71228a41b91b" class="">‘’’</p><p id="53dededf-4fd8-419e-8d02-5d7611e9316f" class="">权利要求 1 要求保护一种高稳定性易于清洗的四列圆柱滚子轴承，对比文件 1（CN205823928U）公开了一种加强型四列圆柱滚子轴承，其中涉及一种高稳定性易于清洗的四列圆柱滚子轴承，并具体公开了以下的技术特征：包括轴承内圈 2（公开了内环组件）、轴承外圈 1（公开了外环组件）和轴承保持架 3（公开了保持架组件），所述轴承外圈 1 内部安装轴承保持架 3，所述轴承外圈1 与所述轴承保持架 3 安装间隙形成护盖槽（参见图 2 所述，密封盖 12 设置在槽中），所述轴承保持架 3 内部安装有轴承内圈 2；所述轴承外圈 1 包括外环 A 和外环 B（参见图 1，两个轴承外圈 1 公开了上述特征），所述外环 A 和外环 B 内部均安装有轴承保持架 3；所述轴承保持架 3 包括保持架 A 和保持架 B（参见图 1，两个轴承保持架 3 公开了上述特征），所述保持架 A 和保持架 B 内部两侧均开设有多个圆柱滚子槽，所述圆柱滚子槽内部安装有圆柱滚子。</p><p id="15996c14-26be-440e-b40c-2c5a7001b1bf" class="">该权利要求所要求保护的技术方案与对比文件 1 的区别在于：外环 A（101）右侧上下两端固定安装有外环连接块（10），所述外环 B（102）左侧上下两端内部开设有外环连接孔（11），且所述外环连接块（10）安装在所述外环连接孔（11）内部；保持架 A（701）右侧固定安装有保持架连接环（704）。</p><p id="194281bd-6570-480a-ace9-85b74c980704" class="">基于上述区别特征，发明实际解决的技术问题是如何连接外环以及保持架。两个外环之间通过连接块、连接孔的方式进行连接以及保持架之间通过连接环连接是本领域的常规连接方式。</p><p id="ace7686a-fb76-46d6-aade-577fb8a4a66e" class="">因此，在对比文件 1 的基础上结合本领域常规技术手段得出该权利要求所要求保护的技术方案，对本领域的技术人员来说是显而易见的，因此该权利要求所要求保护的技术方案不具有突出的实质性特点和显著的进步，因而不具备专利法第 22 条第 3 款规定的创造性。</p><p id="2277c70c-3365-4dbe-9fb7-10148d3d913e" class="">‘’’</p><p id="727cef99-68d9-496a-b272-20544546c8da" class="">
+</p></div></article></body></html>
